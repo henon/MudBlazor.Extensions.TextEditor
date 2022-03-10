@@ -1,14 +1,13 @@
-# Blazored TextEditor
-WYSIWYG Rich Text Editor for Blazor applications - Uses [Quill JS](https://quilljs.com/ "Quill JS.com") and was forked from [Blazored.TextEditor](https://github.com/Blazored/TextEditor)
+# MudBlazor.Extensions.TextEditor
+WYSIWYG Rich Text Editor for MudBlazor applications - Uses [Quill JS](https://quilljs.com/ "Quill JS.com") and was forked from [Blazored TextEditor](https://github.com/somegenericdev/WYSIWYGTextEditor)
 
-![Screenshot](Screenshot.png)
-
+![Screenshot](content/HTMLExample.png)
 
 ### Installing
 
 You can install from NuGet using the following command:
 
-`Install-Package WYSIWYGTextEditor`
+`Install-Package TextEditor`
 
 Or via the Visual Studio package manger.
 
@@ -23,14 +22,14 @@ And then do the same with the Javascript files
 
 ```html
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script src="_content/WYSIWYGTextEditor/quill-blot-formatter.min.js"></script>
-    <script src="_content/WYSIWYGTextEditor/BlazorQuill.js"></script>
+    <script src="_content/TextEditor/quill-blot-formatter.min.js"></script>
+    <script src="_content/TextEditor/BlazorQuill.js"></script>
 ```
 
 Add the following using statement to `_Imports.razor`.
 
 ```cs
-@using WYSIWYGTextEditor
+@using TextEditor
 ```
 
 ## Usage
@@ -39,7 +38,7 @@ Add the following using statement to `_Imports.razor`.
 Compared to the original project, this fork implements a much simpler way to use the component.
 
 ```cs
-@using WYSIWYGTextEditor
+@using TextEditor
 <TextEditor Toolbar="new Toolbar { ShowFullToolbar=true }" EditorContainerId="TestId" @ref="@MyEditor"
                     Placeholder="Enter non HTML format like centering...">
 </TextEditor>
@@ -52,7 +51,7 @@ Compared to the original project, this fork implements a much simpler way to use
 However, should you wish to for some reason, you can still use the component in the old, more verbose way.
 
 ```cs
-@using WYSIWYGTextEditor
+@using TextEditor
 
 <TextEditor @ref="@QuillHtml">
     <ToolbarContent>
@@ -128,7 +127,7 @@ string QuillHTMLContent;
 This fork also implements a simple way to add your own fonts to the editor.
 
 ```cs
-@using WYSIWYGTextEditor
+@using TextEditor
 
 <style>
     /*SET THE DEFAULT FONT*/
@@ -173,3 +172,8 @@ This fork also implements a simple way to add your own fonts to the editor.
 
 ### Import/Export in docx
 Coming soon
+
+### Rich Text Screenshot
+![Screenshot](content/DeltaExample.png)
+### Read Only Screenshot
+![Screenshot](content/InlineEditingExample.png)
